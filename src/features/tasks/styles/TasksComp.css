@@ -1,0 +1,205 @@
+.task-layout-grid {
+  @apply grid w-full animate-task-fade items-start gap-5;
+  max-width: 1320px;
+}
+
+.task-form-panel {
+  @apply relative isolate w-full overflow-hidden border border-cyan-700/20 p-4 sm:p-6;
+  border-radius: 1.4rem;
+  box-shadow: 0 30px 55px -42px rgba(15, 23, 42, 0.85);
+  background:
+    radial-gradient(circle at 90% 5%, rgba(250, 204, 21, 0.35), transparent 38%),
+    radial-gradient(circle at 4% 100%, rgba(6, 182, 212, 0.25), transparent 32%),
+    linear-gradient(160deg, #ffffff, #f8fafc 45%, #f0fdfa 100%);
+}
+
+.task-form-panel-glow {
+  @apply pointer-events-none absolute -z-10;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(130deg, rgba(20, 184, 166, 0.2), rgba(14, 165, 233, 0.06));
+}
+
+.task-form-header {
+  @apply flex flex-col gap-4 md:flex-row md:items-start md:justify-between;
+}
+
+.task-eyebrow {
+  @apply m-0 text-xs font-extrabold uppercase text-teal-700;
+  letter-spacing: 0.14em;
+}
+
+.task-title {
+  @apply mt-1 font-space text-slate-900;
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  letter-spacing: 0.01em;
+}
+
+.task-subtitle {
+  @apply mt-2 leading-relaxed text-slate-700;
+  max-width: 58ch;
+  font-size: 0.98rem;
+}
+
+.task-metrics {
+  @apply grid min-w-0 gap-2 sm:grid-cols-2 md:grid-cols-1;
+}
+
+.task-metric {
+  @apply m-0 border border-sky-600/20 bg-sky-100/60 px-3 py-2 text-sm font-bold text-sky-900;
+  border-radius: 0.86rem;
+}
+
+.task-metric-count {
+  @apply mr-1;
+  font-size: 1.08rem;
+}
+
+.task-form {
+  @apply mt-5 grid gap-4;
+}
+
+.task-field {
+  @apply grid gap-2;
+}
+
+.task-label {
+  @apply font-extrabold uppercase text-teal-700;
+  font-size: 0.77rem;
+  letter-spacing: 0.08em;
+}
+
+.task-input {
+  @apply w-full border border-slate-300 bg-white/95 px-4 py-3 text-slate-900 transition duration-150;
+  border-radius: 0.88rem;
+}
+
+.task-input:hover {
+  @apply border-slate-400;
+}
+
+.task-input:focus {
+  @apply border-teal-500 outline-none ring-4 ring-teal-300/40;
+}
+
+.task-input--textarea {
+  min-height: 92px;
+  @apply resize-y;
+}
+
+.task-tag-row {
+  @apply flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between;
+}
+
+.task-tag-row-label {
+  @apply m-0 font-extrabold uppercase text-teal-700;
+  font-size: 0.77rem;
+  letter-spacing: 0.08em;
+}
+
+.task-tag-studio-btn {
+  @apply rounded-full border border-sky-500/30 bg-sky-100/60 px-3 py-1.5 font-bold text-sky-700 transition duration-150;
+  font-size: 0.82rem;
+}
+
+.task-tag-studio-btn:hover {
+  @apply border-sky-600/45 bg-sky-200/70;
+}
+
+.task-tag-picker {
+  @apply flex flex-wrap gap-2;
+}
+
+.task-tag-status {
+  @apply m-0 text-sm text-slate-500;
+}
+
+.task-tag-status--error {
+  @apply text-red-700;
+}
+
+.task-tag-chip {
+  @apply rounded-full border border-sky-200 bg-sky-50 px-3 py-1.5 text-sm text-sky-900 transition duration-150;
+}
+
+.task-tag-chip:hover {
+  @apply -translate-y-0.5 border-sky-400 bg-sky-100;
+}
+
+.task-tag-chip--selected {
+  @apply border-teal-700 bg-gradient-to-r from-teal-700 to-teal-600 text-white;
+}
+
+.task-tag-chip--selected:hover {
+  @apply border-teal-700 bg-gradient-to-r from-teal-700 to-teal-600;
+}
+
+.task-selected-helper {
+  @apply m-0 text-sm text-slate-600;
+}
+
+.task-actions {
+  @apply mt-1 flex flex-col gap-2 sm:flex-row sm:items-center;
+}
+
+.task-submit-btn {
+  @apply rounded-xl bg-gradient-to-r from-teal-700 to-teal-600 px-4 py-3 font-bold text-white transition duration-150;
+}
+
+.task-submit-btn:hover {
+  @apply -translate-y-0.5;
+  box-shadow: 0 16px 24px -18px rgba(15, 118, 110, 0.9);
+}
+
+.task-cancel-btn {
+  @apply rounded-xl bg-slate-200 px-4 py-3 font-bold text-slate-900 transition duration-150;
+}
+
+.task-cancel-btn:hover {
+  @apply brightness-95;
+}
+
+.task-tag-modal {
+  @apply fixed inset-0 z-50 grid animate-modal-fade place-items-center bg-slate-900/50 p-3 backdrop-blur-sm sm:p-6;
+}
+
+.task-tag-modal-panel {
+  @apply w-full animate-modal-rise overflow-auto rounded-2xl border border-slate-900/15 bg-white/95 p-4;
+  max-width: 840px;
+  max-height: 90vh;
+  box-shadow: 0 30px 48px -26px rgba(15, 23, 42, 0.8);
+}
+
+.task-tag-modal-header {
+  @apply mb-3 flex items-start justify-between gap-3;
+}
+
+.task-tag-modal-eyebrow {
+  @apply font-extrabold uppercase text-teal-700;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+}
+
+.task-tag-modal-title {
+  @apply mt-1 text-base font-semibold text-slate-900;
+}
+
+.task-tag-modal-close {
+  @apply rounded-lg bg-teal-700 px-3 py-2 text-sm font-bold text-white transition duration-150;
+}
+
+.task-tag-modal-close:hover {
+  @apply bg-teal-800;
+}
+
+@media (min-width: 768px) {
+  .task-metrics {
+    min-width: 164px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .task-layout-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
+}

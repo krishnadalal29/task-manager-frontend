@@ -1,0 +1,101 @@
+.auth-panel {
+  @apply relative isolate w-full max-w-xl overflow-hidden border border-cyan-700/20 px-4 py-5 sm:px-6 sm:py-7;
+  border-radius: 1.35rem;
+  box-shadow: 0 28px 58px -42px rgba(15, 23, 42, 0.9);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(14, 165, 233, 0.26), transparent 44%),
+    radial-gradient(circle at 90% 95%, rgba(16, 185, 129, 0.24), transparent 46%),
+    linear-gradient(158deg, #ffffff 0%, #eff6ff 50%, #f0fdfa 100%);
+}
+
+.auth-glow {
+  @apply pointer-events-none absolute -z-10;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(140deg, rgba(56, 189, 248, 0.2), rgba(20, 184, 166, 0.06));
+}
+
+.auth-app-name {
+  @apply mb-3 inline-flex w-fit rounded-full border border-sky-500/30 bg-sky-100/75 px-3 py-1 text-xs font-extrabold uppercase text-sky-800;
+  letter-spacing: 0.1em;
+}
+
+.auth-header {
+  @apply mb-4;
+}
+
+.auth-eyebrow {
+  @apply m-0 text-xs font-extrabold uppercase text-teal-700;
+  letter-spacing: 0.12em;
+}
+
+.auth-title {
+  @apply mt-1 font-space text-slate-900;
+  font-size: clamp(1.5rem, 2.7vw, 2rem);
+}
+
+.auth-subtitle {
+  @apply mt-2 mb-0 leading-relaxed text-slate-700;
+}
+
+.auth-mode-switch {
+  @apply mb-4 grid grid-cols-2 gap-2 rounded-xl border border-sky-200 bg-white/70 p-1;
+}
+
+.auth-mode-btn {
+  @apply rounded-lg px-3 py-2 text-sm font-bold text-slate-700 transition duration-150;
+}
+
+.auth-mode-btn:hover {
+  @apply bg-sky-100/70 text-slate-900;
+}
+
+.auth-mode-btn--active {
+  @apply bg-gradient-to-r from-teal-700 to-teal-600 text-white;
+}
+
+.auth-mode-btn--active:hover {
+  @apply bg-gradient-to-r from-teal-700 to-teal-600 text-white;
+}
+
+.auth-form {
+  @apply grid gap-3;
+}
+
+.auth-field {
+  @apply grid gap-2;
+}
+
+.auth-label {
+  @apply text-xs font-extrabold uppercase text-teal-700;
+  letter-spacing: 0.08em;
+}
+
+.auth-input {
+  @apply w-full rounded-xl border border-slate-300 bg-white/95 px-4 py-3 text-slate-900 transition duration-150;
+}
+
+.auth-input:hover {
+  @apply border-slate-400;
+}
+
+.auth-input:focus {
+  @apply border-teal-500 outline-none ring-4 ring-teal-300/40;
+}
+
+.auth-error {
+  @apply m-0 rounded-lg border border-rose-300 bg-rose-50 px-3 py-2 text-sm font-medium text-rose-700;
+}
+
+.auth-submit-btn {
+  @apply mt-1 rounded-xl bg-gradient-to-r from-teal-700 to-teal-600 px-4 py-3 font-bold text-white transition duration-150;
+}
+
+.auth-submit-btn:hover:not(:disabled) {
+  @apply -translate-y-0.5;
+  box-shadow: 0 16px 24px -18px rgba(15, 118, 110, 0.88);
+}
+
+.auth-submit-btn:disabled {
+  @apply cursor-not-allowed opacity-70;
+}

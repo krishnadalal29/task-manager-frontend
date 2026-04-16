@@ -1,0 +1,122 @@
+.tag-editor-panel {
+  @apply relative w-full overflow-hidden border border-cyan-700/20 p-4 sm:p-6;
+  max-width: 760px;
+  border-radius: 1.15rem;
+  box-shadow: 0 22px 45px -30px rgba(8, 47, 73, 0.6);
+  background:
+    radial-gradient(circle at 97% 0%, rgba(251, 191, 36, 0.3), transparent 34%),
+    linear-gradient(180deg, #ffffff, #f0fdfa);
+}
+
+.tag-editor-panel--full {
+  max-width: none;
+}
+
+.tag-editor-header {
+  @apply flex flex-col gap-4 md:flex-row md:items-start md:justify-between;
+}
+
+.tag-editor-title {
+  @apply mt-1 font-space text-slate-900;
+  font-size: clamp(1.4rem, 3.4vw, 1.95rem);
+  letter-spacing: 0.01em;
+}
+
+.tag-editor-description {
+  @apply mt-2 leading-relaxed text-cyan-900;
+  font-size: 0.95rem;
+}
+
+.tag-editor-stats {
+  @apply grid gap-2 sm:grid-cols-2 md:grid-cols-1;
+}
+
+.tag-editor-stat {
+  @apply m-0 rounded-xl border border-teal-700/20 bg-teal-100/70 px-3 py-2 text-xs font-bold text-cyan-900;
+}
+
+.tag-editor-stat-count {
+  @apply mr-1 text-base;
+}
+
+.tag-editor-form {
+  @apply mt-4;
+}
+
+.tag-editor-label {
+  @apply mb-2 inline-block font-bold uppercase text-teal-800;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+}
+
+.tag-editor-input-row {
+  @apply flex flex-col gap-3 sm:flex-row sm:items-center;
+}
+
+.tag-editor-input {
+  @apply w-full flex-1 border border-teal-200 bg-white px-4 py-3 text-cyan-950 transition duration-150 placeholder:text-slate-500;
+  border-radius: 0.82rem;
+}
+
+.tag-editor-input:hover {
+  @apply border-teal-300;
+}
+
+.tag-editor-input:focus {
+  @apply border-teal-500 outline-none ring-4 ring-teal-300/40;
+}
+
+.tag-editor-submit {
+  @apply bg-gradient-to-r from-teal-600 to-teal-700 px-4 py-3 font-bold text-white transition duration-150;
+  border-radius: 0.82rem;
+}
+
+.tag-editor-submit:hover:not(:disabled) {
+  @apply -translate-y-0.5;
+  box-shadow: 0 13px 22px -16px rgba(15, 118, 110, 0.95);
+}
+
+.tag-editor-submit:disabled {
+  @apply cursor-not-allowed opacity-55;
+}
+
+.tag-editor-hint {
+  @apply mt-2 text-slate-600;
+  font-size: 0.82rem;
+}
+
+.tag-editor-meta {
+  @apply mt-3 text-sm text-slate-700;
+}
+
+.tag-editor-list {
+  @apply mt-3 flex flex-wrap gap-2;
+}
+
+.tag-editor-empty {
+  @apply text-slate-600;
+  font-size: 0.92rem;
+}
+
+.tag-editor-item {
+  @apply inline-flex items-center gap-2 rounded-full border border-orange-200 bg-gradient-to-r from-amber-100 to-orange-100 px-2 py-1 text-sm font-bold text-amber-900;
+}
+
+.tag-editor-name {
+  @apply leading-tight;
+}
+
+.tag-editor-remove {
+  @apply rounded-full bg-amber-900/15 px-2 py-1 font-bold text-amber-900 transition duration-150;
+  font-size: 0.73rem;
+}
+
+.tag-editor-remove:hover {
+  @apply bg-amber-900/25;
+}
+
+@media (min-width: 768px) {
+  .tag-editor-stats {
+    min-width: 140px;
+  }
+}
