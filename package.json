@@ -27,8 +27,7 @@
   },
   "jest": {
     "transformIgnorePatterns": [
-      "^[^.]+$",
-      "^.+(?:node_modules|(?:(?!axios|axios/dist/cjs/).)+?)(?:/node_modules/)?"
+      "/node_modules/(?!(axios|@testing-library)/)"
     ]
   },
   "browserslist": {
