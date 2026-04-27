@@ -55,7 +55,7 @@ function Tasks({
                         <p className="task-eyebrow">Workflow</p>
                         <h1 className="task-title">Task Manager</h1>
                         <p className="task-subtitle">
-                            Create focused tasks, attach tags, and keep projects easy to scan.
+                            Create focused tasks, attach tags, and keep projects easy to scan..
                         </p>
                     </div>
 
