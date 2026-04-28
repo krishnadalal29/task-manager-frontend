@@ -47,11 +47,14 @@ jobs:
   
   deploy:
     needs: prepare
-    runs-on: [self-hosted, backend]
+    runs-on: [self-hosted, windows]
     environment: Development
-    if: github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
     steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
         with:
@@ -62,12 +65,18 @@ jobs:
         run: docker pull ${{ secrets.DOCKER_USERNAME }}/my-frontend:latest
 
       - name: Create runtime .env file
+        shell: pwsh
         run: |
-          echo "REACT_APP_API_BASE_URL=${{ secrets.REACT_APP_API_BASE_URL }}" > .env
+          "REACT_APP_API_BASE_URL=${{ secrets.REACT_APP_API_BASE_URL }}" | Out-File -FilePath .env -Encoding utf8
 
       - name: Run Docker container
+        shell: pwsh
         run: |
-          docker rm -f my-frontend-container || true
+          docker rm -f my-frontend-container 2>$null
           docker run -d --name my-frontend-container -p 3000:3000 --env-file .env ${{ secrets.DOCKER_USERNAME }}/my-frontend:latest
+
+      - name: cleanup .env file
+        shell: pwsh
+        run: Remove-Item -Path .env -Force -ErrorAction SilentlyContinue
 
         
