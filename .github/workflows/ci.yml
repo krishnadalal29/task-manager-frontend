@@ -65,18 +65,18 @@ jobs:
         run: docker pull ${{ secrets.DOCKER_USERNAME }}/my-frontend:latest
 
       - name: Create runtime .env file
-        shell: pwsh
+        shell: powershell
         run: |
           "REACT_APP_API_BASE_URL=${{ secrets.REACT_APP_API_BASE_URL }}" | Out-File -FilePath .env -Encoding utf8
 
       - name: Run Docker container
-        shell: pwsh
+        shell: powershell
         run: |
           docker rm -f my-frontend-container 2>$null
           docker run -d --name my-frontend-container -p 3000:3000 --env-file .env ${{ secrets.DOCKER_USERNAME }}/my-frontend:latest
 
       - name: cleanup .env file
-        shell: pwsh
+        shell: powershell
         run: Remove-Item -Path .env -Force -ErrorAction SilentlyContinue
 
         
